@@ -15,11 +15,6 @@ function complete() {
     loader.hidden = true;
     quoteContainer.hidden = false;
 }
-
-
-
-
-
 // Show New Quote
 function newQuote() {
     loading();
