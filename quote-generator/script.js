@@ -25,6 +25,7 @@ function newQuote() {
     } else{
         authorText.textContent = quote.author;
     }
+    // decreasing the size of a quote according to it's length
     if (quote.text.length > 120) {
         quoteText.classList.add('long-quote');
     }else{
