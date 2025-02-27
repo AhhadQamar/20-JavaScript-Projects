@@ -9,6 +9,7 @@ function imageLoaded() {
     imagesLoaded++;
     if (imageLoaded === totalImages) {
         ready = true;
+        loader.hidden = true;
     }
 }
 // Create a helper function
