@@ -7,7 +7,7 @@ let photosArray = [];
 // Check if all mages were loaded
 function imageLoaded() {
     imagesLoaded++;
-    if (imageLoaded === totalImages) {
+    if (imagesLoaded === totalImages) {
         ready = true;
         loader.hidden = true;
     }
@@ -41,7 +41,7 @@ function displayPhotos() {
         title: photo.alt_description,
     });
     // Event listener, check when each is finished loading
-    img.addEventListener('load',imgLoaded);
+    img.addEventListener('load',imageLoaded);
     // put <img> in <a> and both of them in imageContainer
     item.appendChild(img);
     imageContainer.appendChild(item);
@@ -57,7 +57,7 @@ async function getPhotos() {
         photosArray = await response.json();
         displayPhotos();
     } catch (error) {
-        getPhotos();
+        displayPhotos();
     }
 }
 // Check to see if scrolling near bottom of page, load mote photos
