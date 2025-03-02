@@ -1,15 +1,17 @@
-const imageContainer = document.getElementById('image-container')
+const imageContainer = document.getElementById('image-container');
 const loader = document.getElementById('loader')
 let ready = false;
 let imagesLoaded = 0;
 let totalImages = 0;
 let photosArray = [];
-// Check if all mages were loaded
+// Check if all mages were loaded and increase the number of images loaded 
 function imageLoaded() {
     imagesLoaded++;
     if (imagesLoaded === totalImages) {
         ready = true;
         loader.hidden = true;
+        count = 10;
+        apiUrl = `https://api.unsplash.com/photos/random/?client_id=${apiKey}&count=${count}`;
     }
 }
 // Create a helper function
@@ -50,8 +52,8 @@ function displayPhotos() {
 // Get photos from unsplash api
 async function getPhotos() {
     const apiKey = 'kLjYnvoMT4cwfZJf4otu6jz3lAYcoxydFUFXmzYoINo';
-    const count = 10;
-    const apiUrl = `https://api.unsplash.com/photos/random/?client_id=${apiKey}&count=${count}`;
+    let count = 5;
+    let apiUrl = `https://api.unsplash.com/photos/random/?client_id=${apiKey}&count=${count}`;
     try {
         const response = await fetch(apiUrl);
         photosArray = await response.json();
@@ -60,8 +62,9 @@ async function getPhotos() {
         displayPhotos();
     }
 }
-// Check to see if scrolling near bottom of page, load mote photos
+// Check to see if scrolling near bottom of page, load more photos
 window.addEventListener('scroll',() => {
+    // Checking if the sum of total height of the window and the length the user has scrolled down is >= to the total height of every thing that is loaded and if is not visible and is ready true  
  if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 1000 && ready) {
     ready = false;
     getPhotos();
