@@ -336,16 +336,34 @@
       opacity: 1;
     }
   }
-  
-  /* Iftar Time text running from left to center */
   .iftar-time {
-    font-size: 32px;
+    font-size: 36px;
     font-weight: bold;
     text-align: center;
-    color: #fff;
+    color: #d4af37; /* Luxurious gold */
+    background: transparent;
+    padding: 10px 20px;
     position: absolute;
-    top: 50%;
+    top: 60%;
     left: 50%;
-    transform: translate(-50%,-50%);
-   
+    transform: translate(-50%, -50%);
+    text-shadow: 2px 2px 0 #1a1a1a, 4px 4px 6px rgba(212, 175, 55, 0.5); /* Gold glow with deep shadow */
+    transition: transform 0.3s ease, text-shadow 0.3s ease;
+    animation: fade-glow 1.5s infinite alternate ease-in-out;
+    font-family: 'Playfair Display', serif; /* Elegant font */
   }
+  
+  .iftar-time:hover {
+    transform: translate(-50%, -50%) scale(1.08); /* Slight lift effect */
+    text-shadow: 3px 3px 0 #000, 6px 6px 10px rgba(212, 175, 55, 0.8); /* Enhanced gold glow */
+    color: #ffcc00; /* Brighter gold on hover */
+  }
+  
+  @keyframes fade-glow {
+    0% {
+      text-shadow: 2px 2px 0 #1a1a1a, 4px 4px 6px rgba(212, 175, 55, 0.4);
+    }
+    100% {
+      text-shadow: 2px 2px 0 #1a1a1a, 5px 5px 9px rgba(212, 175, 55, 0.7);
+    }
+  }  
