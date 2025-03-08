@@ -2,7 +2,9 @@ const timeText = document.querySelector('#time');
 let timeArray = [];
 const today = new Date().getDate(); 
 function displayTime() {
-    timeText.textContent = timeArray.data[today - 1].timings.Maghrib;
+    const time = timeArray.data[today - 1].timings.Maghrib.replace(/\s*\(.*?\)\s*/g, '').trim();
+    timeText.textContent = time;
+    console.log(time);
 }
 async function getTime() {
     try {
