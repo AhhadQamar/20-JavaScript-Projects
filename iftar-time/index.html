@@ -1,24 +1,59 @@
-<d!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Template</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <div class="iftar-container">
-        <div class="iftar-time" id="time">18:10</div>
-        <div class="iftar-dua">
-            اللهم إني لك صمت وبك آمنت وعليك توكلت وعلى رزقك أفطرت  
-            <br>  
-            **Allahumma inni laka sumtu wa bika aamantu wa ‘alayka tawakkaltu wa ‘ala rizq-ika-aftartu.**  
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Iftar Time - Toba Tek Singh</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="content">
+        <div class="header">
+          <h1>Iftar Time</h1>
+          <div class="location">
+            <i class="fas fa-map-marker-alt"></i>
+            Toba Tek Singh, Pakistan
+          </div>
+          <div class="date" id="date">Ramadan 1445</div>
         </div>
+
+        <div class="time-container">
+          <div class="time-label">Time Until Iftar</div>
+          <div class="iftar-time" id="time"></div>
+        </div>
+
+        <div class="dua-container">
+          <div class="dua-arabic">
+            اللهم إني لك صمت وبك آمنت وعليك توكلت وعلى رزقك أفطرت
+          </div>
+          <div class="dua-translation">
+            O Allah, I fasted for You, believed in You, put my trust in You, and
+            broke my fast with Your sustenance.
+          </div>
+        </div>
+
+        <div class="audio-controls">
+          <button id="toggleAudio" class="audio-btn">
+            <i class="fas fa-volume-up"></i>
+          </button>
+        </div>
+      </div>
     </div>
-    <audio autoplay="autoplay">
-        <source src="https://archive.org/download/MaherZainRamadanArabicVersion/Maher%20Zain%20Ramadan%20%28Arabic%20Version%29.mp3" type="audio/mp3" />
-    </audio>     
+
+    <audio id="backgroundAudio" loop>
+      <source
+        src="https://archive.org/download/MaherZainRamadanArabicVersion/Maher%20Zain%20Ramadan%20%28Arabic%20Version%29.mp3"
+        type="audio/mp3"
+      />
+    </audio>
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
